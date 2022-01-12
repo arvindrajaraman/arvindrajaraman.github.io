@@ -1,0 +1,51 @@
+<div class="container" id="content">
+    <div class="title">
+        <div class="dot"></div> <div class="bar left"></div> <span>Teaching Materials</span> <div class="bar right"></div> <div class="dot"></div>
+    </div>
+    <div class="card">
+        <div class="cardHeaderSection">
+            <span class="cardTitle">
+                <b>CS 188</b>: Introduction to Artificial Intelligence
+                <br>
+                <span class="cardSubTitle"><b>Spring 2022</b>, Stuart Russell & Dawn Song</span>
+            </span>
+        </div>
+        <div class="cardContentSection">
+            <p>
+                Welcome! Here, I will be posting content/materials that I will be using in discussion sections. Stay tuned, as this will be updated throughout the semester! If you'd like to see other information about the course, visit the <a href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank">course website</a>.
+            </p>
+            <table id="discussionContentTable">
+                <thead>
+                    <th class="center-align">Week #</th>
+                    <th class="center-align">Week of</th>
+                    <th class="center-align">Topics</th>
+                    <th class="center-align">Worksheet</th>
+                    <th class="center-align">Annotated Worksheet</th>
+                    <th class="center-align">Slides</th>
+                    <th class="center-align">Practice Problems</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="week in courseContent">
+                        <th class="center-align serif">{{week.num}}</th>
+                        <td class="center-align">{{week.weekOf}}</td>
+                        <td class="center-align" colspan="{{week.collapse ? 5 : 1}}"><span>{{week.description}}</span></td>
+                        <td class="center-align" ng-hide="week.collapse">
+                            <a ng-show="week.wsLink" ng-href="{{week.wsLink}}" class="fa fa-file-text-o" target="_blank"></a>
+                        </td>
+                        <td class="center-align" ng-hide="week.collapse">
+                            <a ng-show="week.wsaLink" ng-href="{{week.wsaLink}}" class="fa fa-file-text-o" target="_blank"></a>
+                        </td>
+                        <td class="center-align" ng-hide="week.collapse">
+                            <a ng-show="week.sLink" ng-href="{{week.sLink}}" class="fa fa-file-powerpoint-o" target="_blank"></a>
+                        </td>
+                        <td class="center-align" ng-hide="week.collapse">
+                            <a ng-show="week.ppLink" ng-href="{{week.ppLink}}" class="fa fa-file-text-o" target="_blank"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
