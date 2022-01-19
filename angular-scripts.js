@@ -73,7 +73,7 @@ app.controller('AboutMeController', function ($scope) {
 
 app.controller('TeachingController', function($scope) {
     $scope.courseContent = [
-        {num: 1, weekOf: '1/16', description: 'Intro to AI, Agents, & Environments'},
+        {num: 1, weekOf: '1/16', description: 'Intro to AI, Agents, & Environments', wsLink: 'https://inst.eecs.berkeley.edu/~cs188/sp22/assets/section/section01.pdf', sLink: 'https://docs.google.com/presentation/d/1oUdKz2GbNzSguxL_S3FGVbv2XhIUeRrCjjanrUc2r4g/edit?usp=sharing'},
         {num: 2, weekOf: '1/23', description: 'Uninformed & Informed Search'},
         {num: 3, weekOf: '1/30', description: 'Local Search, Games (Minimax, Alpha-Beta, MCTS, Chance)'},
         {num: 4, weekOf: '2/06', description: 'Propositional Logic, Logical Planning'},
