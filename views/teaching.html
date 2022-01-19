@@ -22,7 +22,6 @@
                     <th class="center-align">Worksheet</th>
                     <th class="center-align">Annotated Worksheet</th>
                     <th class="center-align">Slides</th>
-                    <th class="center-align">Practice Problems</th>
                 </thead>
                 <tbody>
                     <tr ng-repeat="week in courseContent">
@@ -37,9 +36,6 @@
                         </td>
                         <td class="center-align" ng-hide="week.collapse">
                             <a ng-show="week.sLink" ng-href="{{week.sLink}}" class="fa fa-file-powerpoint-o" target="_blank"></a>
-                        </td>
-                        <td class="center-align" ng-hide="week.collapse">
-                            <a ng-show="week.ppLink" ng-href="{{week.ppLink}}" class="fa fa-file-text-o" target="_blank"></a>
                         </td>
                     </tr>
                 </tbody>
