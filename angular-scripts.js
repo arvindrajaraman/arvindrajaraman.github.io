@@ -74,7 +74,7 @@ app.controller('AboutMeController', function ($scope) {
 app.controller('TeachingController', function($scope) {
     $scope.courseContent = [
         {num: 1, weekOf: '1/16', description: 'Intro to AI, Agents, & Environments', wsLink: 'https://inst.eecs.berkeley.edu/~cs188/sp22/assets/section/section01.pdf', wsaLink: 'https://drive.google.com/file/d/1_HqTOV2qlP3q-pUZ6_jIawGQ3Op9OPLF/view?usp=sharing', sLink: 'https://docs.google.com/presentation/d/1oUdKz2GbNzSguxL_S3FGVbv2XhIUeRrCjjanrUc2r4g/edit?usp=sharing'},
-        {num: 2, weekOf: '1/23', description: 'Uninformed & Informed Search'},
+        {num: 2, weekOf: '1/23', description: 'Uninformed & Informed Search', wsLink: 'https://inst.eecs.berkeley.edu/~cs188/sp22/assets/section/section02.pdf', wsaLink: 'https://drive.google.com/file/d/1L92PvSdHxPXE9zYoGugDoGXJAG_X2uy8/view?usp=sharing', sLink: 'https://docs.google.com/presentation/d/1bS09U2ELYdNeN0cjZaxSGAI5oeYxC5HQCLNrJK6oQf8'},
         {num: 3, weekOf: '1/30', description: 'Local Search, Games (Minimax, Alpha-Beta, MCTS, Chance)'},
         {num: 4, weekOf: '2/06', description: 'Propositional Logic, Logical Planning'},
         {num: 5, weekOf: '2/13', description: 'First-Order Logic, Intro to Naive Bayes'},
