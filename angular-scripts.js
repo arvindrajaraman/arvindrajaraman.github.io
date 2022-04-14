@@ -85,7 +85,7 @@ app.controller('TeachingController', function($scope) {
         {num: 10, weekOf: '3/20', description: 'Spring Break', collapse: true},
         {num: 11, weekOf: '3/27', description: 'Utility & Rationality Theory, Decision Networks & VPI', wsLink: 'https://inst.eecs.berkeley.edu/~cs188/sp22/assets/section/section11.pdf', sLink: 'https://docs.google.com/presentation/d/1p1ORAtdlkMvgGGfy1pT07DLgoQiJ9AgWIEEe2t7rR-k/edit?usp=sharing'},
         {num: 12, weekOf: '4/03', description: 'Markov Decision Processes', wsLink: 'https://inst.eecs.berkeley.edu/~cs188/sp22/assets/section/section12.pdf', sLink: 'https://docs.google.com/presentation/d/1vvkVUvIDOG0-BWh6xT0sddlzkh_B6QUfg9CQX4gAXd8/edit?usp=sharing'},
-        {num: 13, weekOf: '4/10', description: 'Neural Networks'},
+        {num: 13, weekOf: '4/10', description: 'Naive Bayes & Neural Networks', wsLink: 'https://inst.eecs.berkeley.edu/~cs188/sp22/assets/section/section13.pdf', sLink: 'https://docs.google.com/presentation/d/1fH1ENEsEzQnV_KtI1IoXi3yBn8bLEq-CgaMKC9hgTHs/edit?usp=sharing'},
         {num: 14, weekOf: '4/17', description: 'Reinforcement Learning'},
         {num: 15, weekOf: '4/24', description: 'Special Topics, Course Review'},
         {num: 16, weekOf: '5/01', description: 'RRR Week', collapse: true},
