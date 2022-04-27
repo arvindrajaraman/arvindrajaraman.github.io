@@ -19,8 +19,9 @@
                     <th class="center-align">Week #</th>
                     <th class="center-align">Week of</th>
                     <th class="center-align">Topics</th>
-                    <th class="center-align">Worksheet</th>
-                    <th class="center-align">Annotated Worksheet</th>
+                    <th class="center-align">Regular Discussion</th>
+                    <th class="center-align">Exam Prep Discussion</th>
+<!--                    <th class="center-align">Annotated Worksheet</th>-->
                     <th class="center-align">Slides</th>
                 </thead>
                 <tbody>
@@ -32,8 +33,11 @@
                             <a ng-show="week.wsLink" ng-href="{{week.wsLink}}" class="fa fa-file-text-o" target="_blank"></a>
                         </td>
                         <td class="center-align" ng-hide="week.collapse">
-                            <a ng-show="week.wsaLink" ng-href="{{week.wsaLink}}" class="fa fa-file-text-o" target="_blank"></a>
+                            <a ng-show="week.epLink" ng-href="{{week.wsLink}}" class="fa fa-file-text-o" target="_blank"></a>
                         </td>
+<!--                        <td class="center-align" ng-hide="week.collapse">-->
+<!--                            <a ng-show="week.wsaLink" ng-href="{{week.wsaLink}}" class="fa fa-file-text-o" target="_blank"></a>-->
+<!--                        </td>-->
                         <td class="center-align" ng-hide="week.collapse">
                             <a ng-show="week.sLink" ng-href="{{week.sLink}}" class="fa fa-file-powerpoint-o" target="_blank"></a>
                         </td>
