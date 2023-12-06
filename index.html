@@ -1,61 +1,282 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <title>Arvind Rajaraman</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="vendors/skeleton/skeleton.css" type="text/css">
-    <link rel="stylesheet" href="vendors/skeleton/normalize.css" type="text/css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="index.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" type="text/javascript"></script>
-    <script src="vendors/typewriter-effect.js" type="text/javascript"></script>
 
-    <script src="vendors/angular.min.js" type="text/javascript"></script>
-    <script src="vendors/angular-route.min.js" type="text/javascript"></script>
-    <script src="angular-scripts.js" type="text/javascript"></script>
+    <meta name="author" content="Arvind Rajaraman">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+  </head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H31DM1XFWJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Arvind Rajaraman
+                </p>
+                <p>I am a 4th year undergraduate student at UC Berkeley, and I research at <a target="_blank" href="https://bair.berkeley.edu/">Berkeley Artificial Intelligence Research</a> with Professor <a target="_blank" href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a> and formerly Professor <a target="_blank" href="https://www.cs.cmu.edu/~abajcsy/">Andrea Bajcsy</a>. Broadly, I am interested in building embodied agents that can reason about the world, plan, and collaborate with humans effectively using deep learning.
+                </p>
+                <p>
+                  <b>Industry Experience</b>. This summer, I was a Machine Learning Scientist Intern at <a target="_blank" href="https://www.atlassian.com/">Atlassian</a>, where I worked on large language model (LLM) infrastructure. In 2022, I interned <a target="_blank" href="https://www.nuro.ai/">Nuro</a> (an autonomous vehicles startup), where I worked on low-latency video streaming and model uncertainty estimation. In fall 2021, I interned at <a target="_blank" href="https://nvidia.com/">NVIDIA</a>'s autonomous vehicles team, where I worked on AutoML and vision models.
+                </p>
+                <p>
+                  <b>Other Experience</b>. I was the Head TA for Berkeley's CS 188 (Introduction to Artificial Intelligence) and CS 189 (Introduction to Machine Learning), and I was on the executive board of <a target="_blank" href="https://ml.berkeley.edu/">Machine Learning at Berkeley (ML@B)</a>. I am an <a target="_blank" href="https://eecs.berkeley.edu/resources/undergrads/accel">Accel Scholar</a>, part of the <a></a target="_blank" href="https://eecs.berkeley.edu/resources/undergrads/honors">EECS Honors Program</a>, and a part of the <a target="_blank" href="https://met.berkeley.edu/">Management, Entrepreneurship, and Technology (M.E.T.) Program.</a>
+                </p>
+                <p style="text-align:center">
+                  <a target="_blank" href="mailto:arvind6902@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a target="_blank" href="data/ArvindRajaraman-CV.pdf">CV</a> &nbsp;/&nbsp;
+                  <a target="_blank" href="data/ArvindRajaraman-bio.txt">Bio</a> &nbsp;/&nbsp;
+                  <a target="_blank" href="https://twitter.com/Arvind_ML">Twitter</a> &nbsp;/&nbsp;
+                  <a target="_blank" href="https://github.com/arvindrajaraman">GitHub</a> &nbsp;/&nbsp;
+                  <a target="_blank" href="https://www.linkedin.com/in/arvind-rajaraman">LinkedIn</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:40%;max-width:40%">
+                <a target="_blank" href="images/ArvindRajaraman.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/ArvindRajaraman.jpeg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:20px 20px 0 20px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  I am excited by the prospect of embodied robots that can generalize easily to unseen tasks and environments, in order to become widely useful to humans. My research interests include deep reinforcement learning, unsupervised learning, language modeling, and human-robot interaction.
+                </p>
+                <p>
+                  More specifically, I am interested in creating <b>embodied agents that model human learning</b>, effectively representing their goals, intent, and biases. Becuase language is inherently information-dense, abstractable, highly available from a data standpoint, and contains knowledge about usefulness to humans, I am interested in building <b>learning systems that use language</b> to interact with humans, represent knowledge, and plan.
+                </p>
+                <p>* Indicates equal contribution and co-authorship.</p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+                <td style="padding:20px 20px 0 20px;width:25%;vertical-align:middle" colspan="2">
+                    <h3>In-Progress Research</h3>
+                    <p>The following are research projects that are currently in progress.</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <div class="one">
+                    <img src='images/language_skills.gif' width="160">
+                    </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                    <span>
+                    <span class="papertitle">Semantically Diverse Skill Discovery through Language Models in the Loop</span>
+                    </span>
+                    <br>
+                    <b>Arvind Rajaraman</b>,
+                    <a target="_blank" href="https://people.eecs.berkeley.edu/~vmyers/">Vivek Myers</a>,
+                    <i>Other authors TBD</i>
+                    <br>
+                    <i>Project in progress</i>
+                    <br>
+                    <p></p>
+                    <p>
+                    Adding an informative constraint via language to unsupervised skill discovery, in order to learn skills that are useful to humans.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <div class="one">
+                    <img src='images/closed_loop_influence.gif' width="160">
+                    </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                    <span>
+                    <span class="papertitle">Explicit vs. Implicit Modeling of Human Internal State for Robot Planning</span>
+                    </span>
+                    <br>
+                    <b>Arvind Rajaraman</b>,
+                    <a target="_blank" href="https://thomasrantian.github.io/">Ran (Thomas) Tian</a>,
+                    <a target="_blank" href="https://people.eecs.berkeley.edu/~anca/">Anca Dragan</a>,
+                    <a target="_blank" href="https://www.cs.cmu.edu/~abajcsy/">Andrea Bajcsy</a>
+                    <br>
+                    <i>Project in progress</i>
+                    <br>
+                    <p></p>
+                    <p>
+                    A new method for robots to collaborate with humans by co-evolving a sequence model that estimates a human's internal state (with a model-based prior) and a robotic influence policy.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <div class="one">
+                    <img src='images/plasticity_rl.gif' width="160">
+                    </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                    <span>
+                    <span class="papertitle">Inducing Weight Normality for Plasticity in Deep Reinforcement Learning</span>
+                    </span>
+                    <br>
+                    <b>Arvind Rajaraman</b>*,
+                    <a target="_blank" href="https://seyonechithrananda.github.io/">Seyone Chithrananda</a>*,
+                    <a target="_blank" href="https://www.linkedin.com/in/veronateo/">Verona Teo</a>*
+                    <br>
+                    <i>Project in progress</i>
+                    <br>
+                    <p></p>
+                    <p>
+                    A new KL-divergence-based loss to increase plasticity in deep reinforcement learning, specifically for the non-stationary regression problem in value critics.
+                    </p>
+                </td>
+            </tr>
+          </tbody></table>
 
-        gtag('config', 'G-H31DM1XFWJ');
-    </script>
-</head>
-<body ng-app="app">
-    <div class="serif" id="navbar" ng-controller="HeaderController">
-        <div class="container">
-            <table>
-                <tr>
-                    <td>
-                        <span id="name">Arvind Rajaraman</span>
-                    </td>
-                    <td style="text-align: right; white-space: nowrap;">
-                        <div style="width: 100%;">
-                            <a class="headerLink" href="#!aboutme" ng-class="{'active': $location.path() === '/aboutme'}">About Me</a> ·
-                            <a class="headerLink" href="#!teaching" ng-class="{'active': $location.path() === '/teaching'}">Teaching</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <div ng-view>
-        <div class="container" style="text-align: center;">
-            <h1 class="serif">Loading content...</h1>
-        </div>
-    </div>
-
-    <div class="serif" id="footer">
-        <div class="container">
-            Copyright © 2022, Arvind Rajaraman. All rights reserved.
-        </div>
-    </div>
-</body>
+          
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Teaching</h2>
+                <p>Instructors of each course are listed in parantheses.</p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="images/cs189.png" alt="cs189" width="175" height="130">
+                </td>
+                <td width="75%" valign="center">
+                    <b>CS 189: Introduction to Machine Learning</b>
+                    <br>
+                    Head Teaching Assistant, <a target="_blank" href="https://eecs189.org/">Fall 2023</a> (<a target="_blank" href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a>, <a target="_blank" href="http://www.jennifer.listgarten.com/">Jennifer Listgarten</a>)<br>
+                    Head Teaching Assistant, <a target="_blank" href="https://people.eecs.berkeley.edu/~jrs/189s23/">Spring 2023</a> (<a target="_blank" href="https://people.eecs.berkeley.edu/~jrs/">Jonathan Shewchuk</a>)<br>
+                    Teaching Assistant, <a target="_blank" href="https://people.eecs.berkeley.edu/~jrs/189s23/">Fall 2022</a> (<a target="_blank" href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a>, <a target="_blank" href="http://www.jennifer.listgarten.com/">Jennifer Listgarten</a>)
+                </td>
+            </tr>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <img src="images/cs188.png" alt="cs188" width="175" height="100">
+              </td>
+              <!-- https://people.eecs.berkeley.edu/~jrs/189s23/ -->
+              <td width="75%" valign="center">
+                <b>CS 188: Introduction to Artificial Intelligence</b>
+                <br>
+                Head Teaching Assistant, <a target="_blank" href="http://inst.eecs.berkeley.edu/~cs188/su22">Summer 2022</a> (Yanlai Yang, Angela Liu)<br>
+                Teaching Assistant, <a target="_blank" href="http://inst.eecs.berkeley.edu/~cs188/sp22">Spring 2022</a> (<a target="_blank" href="https://people.eecs.berkeley.edu/~russell/">Stuart Russell</a>, <a target="_blank" href="https://dawnsong.io/">Dawn Song</a>)
+              </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/cs70.png" alt="cs70" width="175" height="70">
+                </td>
+                <!-- https://people.eecs.berkeley.edu/~jrs/189s23/ -->
+                <td width="75%" valign="center">
+                  <b>CS 70: Discrete Mathematics and Probability Theory</b>
+                  <br>
+                  Academic Intern, <a target="_blank" href="https://www.sp21.eecs70.org/">Spring 2021</a> (<a target="_blank" href="https://www2.eecs.berkeley.edu/Faculty/Homepages/shyam.html">Shyam Parekh</a>, <a target="_blank" href="https://www2.eecs.berkeley.edu/Faculty/Homepages/rao.html">Satish Rao</a>)
+                </td>
+              </tr>            
+          </tbody></table>
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Industry</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="images/atlassian.jpeg" alt="atlassian" width="128" height="128">
+                </td>
+                <td width="75%" valign="center">
+                    <b>Atlassian</b>
+                    <br>
+                    <span>Machine Learning Scientist Intern</span>
+                    <br>
+                    <i>Core Machine Learning Team</i>
+                    <br><br>
+                    Worked on a search relevance algorithm, RLAIF (reinforcement learning with AI feedback) infrastructure, text-to-SQL, and chatbots for question answering.
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="images/nuro.jpeg" alt="nuro" width="128" height="128">
+                </td>
+                <td width="75%" valign="center">
+                    <b>Nuro</b>
+                    <br>
+                    <span>Software Engineer Intern</span>
+                    <br>
+                    <i>Fleet Infrastructure Team</i>
+                    <br><br>
+                    Worked on a search relevance algorithm, RLAIF (reinforcement learning with AI feedback) infrastructure, text-to-SQL, and chatbots for question answering.
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="images/nvidia.jpeg" alt="nvidia" width="128" height="128">
+                </td>
+                <td width="75%" valign="center">
+                    <b>NVIDIA</b>
+                    <br>
+                    <span>Software Engineer Intern</span>
+                    <br>
+                    <i>Autonomous Vehicles Division, DriveIX</i>
+                    <br><br>
+                    Worked on AutoML for hyperparameter tuning of vision models, increasing data fidelity of vision data, and ML engineering infrastructure.
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="images/segmed.jpeg" alt="segmed" width="128" height="128">
+                </td>
+                <td width="75%" valign="center">
+                    <b>Segmed</b> (YC W20)
+                    <br>
+                    <span>Software Engineer Intern</span>
+                    <br><br>
+                    Worked on authentication, authorization, and developer productivity tools.
+                </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px 20px 0 20px;width:100%;vertical-align:middle">
+              <h2>Miscellaneous</h2>
+              <p>
+                I was previously the Vice President of <a target="_blank" href="https://ml.berkeley.edu/">Machine Learning at Berkeley (ML@B)</a>, which is Berkeley's undergraduate ML group. I co-developed and taught a course focused on <a target="_blank" href="https://fluff-armadillo-037.notion.site/Modern-Computer-Vision-and-Deep-Learning-CS-198-126-b11006739378470fa67a9cf6594201e0">modern computer vision</a> sponsored by Professor <a target="_blank" href="http://people.eecs.berkeley.edu/~russell/">Stuart Russell</a>, taught introductory ML workshops across the Bay Area, and managed $100,000 of finances.
+              </p>
+              <p>
+                Below are some links of content I've developed:
+                <ul>
+                  <li><a target="_blank" href="https://drive.google.com/drive/folders/1BM-6LCi15RfjTSAjJ2A8G16w5DqB0UDv?usp=drive_link">CS 189 (Introduction to Machine Learning)</a> recitation slides</li>
+                  <li><a target="_blank" href="https://drive.google.com/drive/folders/1zuP3OJfjJ5xI36omlILGv4mMVFH-_Vzl?usp=drive_link">CS 188 (Introduction to Artificial Intelligence)</a> recitation slides</li>
+                  <li><a target="_blank" href="https://www.youtube.com/watch?v=zHUFiW5wuYY">Model-agnostic meta learning (MAML)</a> talk I presented to Berkeley students</li>
+                </ul>
+              </p>
+              <p>* Indicates equal contribution and co-authorship.</p>
+            </td>
+          </tr>
+        </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:center;font-size:small;">
+                    <a target="_blank" href="https://github.com/jonbarron/jonbarron_website">Website template from Jon Barron</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
