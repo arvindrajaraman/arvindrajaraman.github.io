@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tensor Parallelism with Muon</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+      window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/languages/python.min.js"></script>
+    <script defer>
+      window.addEventListener('load', function () {
+        if (window.hljs && typeof hljs.highlightAll === 'function') {
+          hljs.highlightAll();
+        }
+      });
+    </script>
+</head>
+<body>
+    <main class="content blog">
+        <p style="margin-top:2rem;"><a href="index.html">← Back to home</a></p>
+        <h1>Tensor Parallelism with Muon</h1>
+        <p style="text-align:center;"><b>By</b> Arvind Rajaraman</p>
+        <br />
+        <p>
+            This blog represents my attempt at building a tensor-parallelized version of the Muon optimizer in JAX.
+            Note, I built this for fun so this was not tested on an actual production system! :)
+        </p>
+        <div class="note">
+            This post focuses on the implementation of tensor parallelism for Muon—not on motivating
+            the linear algebra or theory. We’ll keep math to short formulas and spend time on the code.
+        </div>
+
+        <h2>Motivating Tensor Parallelism</h2>
+        <p>
+            Tensor parallelism is one of several parallelism techniques used to speed up training of billion to trillion parameter LLMs.
+            <br /><br />
+            You may remember from an elementary linear algebra course that matrix-matrix multiplication is actually the concatenation of several matrix-vector multiplications.
+            <div class="math-example">
+                <p>
+                    Suppose we have matrices \(A \in \mathbb{R}^{m \times n}\) and \(B \in \mathbb{R}^{n \times p}\).
+                    Each column of \(B\) can be represented as a vector: 
+                    \[
+                        B = \begin{bmatrix}
+                            \mid & \mid &        & \mid \\
+                            b_1  & b_2  & \cdots & b_p \\
+                            \mid & \mid &        & \mid
+                        \end{bmatrix}
+                    \]
+                    where each \(b_i \in \mathbb{R}^n\). When computing \(C = A B\), each column of \(C\) corresponds one-to-one with a column of \(B\).
+                    \[
+                        C = A B = \begin{bmatrix}
+                            \mid & \mid &        & \mid \\
+                            c_1  & c_2  & \cdots & c_p \\
+                            \mid & \mid &        & \mid
+                        \end{bmatrix}
+                    \]
+                    where each \(c_i = A b_i\).
+                </p>
+                <p>
+                    Using this as inspiration, what if we grouped tuples of column vectors into mini-matrices?
+                    \[
+                        B = \begin{bmatrix}
+                            \mid\!\mid & \mid\!\mid &        & \mid\!\mid \\
+                            B_1        & B_2        & \cdots & B_k \\
+                            \mid\!\mid & \mid\!\mid &        & \mid\!\mid
+                        \end{bmatrix}
+                    \]
+                    where each \(B_j\) is a block of consecutive columns, e.g.,
+                    \[
+                    B_1 = [\,b_1\,|\,b_2\,|\;\ldots\;|\,b_s\,]
+                    \]
+                    (with block size \(s\)), and so on for \(B_2, B_3, \ldots\).
+                </p>
+                <p>
+                    Then, the original matrix-matrix multiplication can be computed "block-wise" as:
+                    \[
+                        AB = \left[\, AB_1 \;\Big|\; AB_2 \;\Big|\; \cdots \;\Big|\; AB_k \,\right]
+                    \]
+                </p>
+                <p>
+                    If we have several GPUs or TPUs, we could put each \(B_j\) into its own device and compute the corresponding \(AB_j\) in parallel.
+                </p>
+            </div>
+        </p>
+
+        <h2>Motivating Muon</h2>
+        <p>
+            While this blog is not focused on optimization theory, it's useful to understand a little history of popular optimizers. Note, a lot of details are omitted for brevity.
+            <br /><br />
+            An optimizer step in a training step involves updating the parameters of the model with gradients. The simplest optimizer (stochastic gradient descent) would be:
+            \[
+                \theta_{t} \gets \theta_{t-1} - \alpha \nabla_\theta J(\theta_{t-1})
+            \]
+            where \( \alpha \) is the learning rate.
+            <br /><br />
+            Empirical analysis into neural networks' loss landscapes has shown the presence of many local minima. With small learning rates, SGD can get stuck. To address this, we can use previous gradients as "inspiration" to guide the update. This is the idea behind momentum optimizers:
+            \[
+                \theta_{t} \gets \theta_{t-1} - \alpha \nabla_\theta J(\theta_{t-1}) + \beta \theta_{t-1}
+            \]
+            where \( \beta \) is the momentum coefficient.
+            <br /><br />
+            We can use second <a href="https://en.wikipedia.org/wiki/Moment_(mathematics)" target="_blank">moments</a> to further guide the update. This is the idea behind Adam:
+            \[
+                \theta_{t} \gets \theta_{t-1} - \alpha \frac{m_{t-1}}{\sqrt{v_{t-1} + \epsilon}}
+            \]
+            where \( m_t \) is the first moment and \( v_t \) is the second moment.
+            <br /><br />
+            Adam has been the workhorse for much of recent deep learning history. As the size of parameter space increases for larger and larger models though, the following observation hinders convergence: a few directions in parameter space dominate the gradients, overshadowing smaller but equally informative directions.
+            By orthogonalizing (given a set of vectors, find a set of orthogonal vectors that span the same space) the update directions, Muon can learn from more directions to converge faster.
+            <br><br />
+            Here is the algorithm in a nutshell (again, skipping a lot of the details to focus on the implementation):
+        <div class="math-block">
+            \[
+            \begin{aligned}
+            &\quad g_t \gets \nabla_\theta J_\theta(\theta_{t-1}) \\[1ex]
+            &\quad B_t \gets \mu_t B_{t-1} + g_t \\[1ex]
+            &\quad G_t \gets B_t^\top B_t \\[1ex]
+            &\quad G_t^{-1/2} \gets \text{Newton-Schulz}(G_t) \\[1ex]
+            &\quad O_t \gets B_t \, G_t^{-1/2} \\[1ex]
+            &\quad \theta_t \gets \theta_{t-1} - \gamma\lambda \theta_{t-1}  \\[1ex]
+            &\quad \theta_t \gets \theta_t - \gamma O_t \\[1ex]
+            &\quad \text{return } \theta_t
+            \end{aligned}
+            \]
+        </div>
+        </p>
+
+        <h2>Parallelized Newton-Schulz Approximation</h2>
+        <div class="math-block">
+            \[
+            \begin{aligned}
+            &\quad Y_0 \gets G_t / \|G_t\|_F \\
+            &\quad Z_0 \gets I \\
+            &\quad \text{For } k = 0,\dots,n: \\
+            &\quad\quad T_k = \tfrac{1}{2}\big(3I_d - Z_k Y_k) \\
+            &\quad\quad Y_{k+1} = Y_k T_k \\
+            &\quad\quad Z_{k+1} = T_k Z_k \\
+            &\text{return } G_t^{-1/2} \approx \frac{Z_{n}}{\sqrt{\|G_t\|_F + \epsilon}}
+            \end{aligned}
+            \]
+        </div>
+        
+        <p>
+            Newton-Schulz is a method to approximate the inverse square root \( G^{-\frac{1}{2}} \) of a matrix \( G \) through successive iterations.
+            We can mostly treat it as a mystical workhorse for computing \( G^{-\frac{1}{2}} \), since nothing interesting around parallelism is happening here.
+        </p>
+        <pre><code class="language-python">def newton_schulz(G_t, n_iter, eps):
+    d = G_t.shape[0]
+    frob = jnp.sqrt(jnp.sum(G_t ** 2) + eps)
+
+    Y = G_t / frob
+    Z = jnp.eye(d, dtype=G_t.dtype)
+
+    for _ in range(n_iter):
+        ZY = Z @ Y
+        T = 0.5 * (3.0 * jnp.eye(d) - ZY)
+        Y = Y @ T
+        Z = T @ Z
+
+    G_inv_sqrt = Z / jnp.sqrt(frob + eps)
+    return G_inv_sqrt
+</code></pre>
+
+        <p>
+            Note, we have a lot of freedom to design which matrices are copied across devices (requires less frequent communication but more memory). It's easier to reason about a copied matrix,
+            so that seems like a good starting point. But when any matrix becomes too large, then we have to break up the computation into smaller chunks.
+        </p>
+
+        <h2>Muon Update and <code>pmap</code></h2>
+        <p>
+            The function <code>muon_tp_step</code> performs a single Muon update on a shard/block of the parameters.
+            The full parameter matrix (e.g., a linear layer weight) is split across devices along the
+            last dimension, so each device receives its own slice of the parameters <code>theta_tm1</code> with shape
+            <code>(d_in, d_out / n_devices)</code>, along with matching shards of the current gradient <code>g_t</code> and the
+            previous momentum-like matrix <code>B_tm1</code>. The Muon step builds a new momentum <code>B_t</code>, computes a global
+            inverse square root via Newton–Schulz, forms the orthogonalized update <code>O_t</code>, applies decoupled weight decay, and updates the local parameter shard.
+        </p>
+        <p>
+            <code>muon_tp_step</code> takes the following arguments:
+            <strong><code>theta_tm1</code></strong> (parameters at step <code>t-1</code>), <strong><code>g_t</code></strong> (current gradient),
+            <strong><code>B_tm1</code></strong> (previous momentum-like matrix), <strong><code>gamma</code></strong> (learning rate),
+            <strong><code>lambd</code></strong> (decoupled weight decay coefficient), and <strong><code>mu_t</code></strong> (momentum coefficient).
+            
+        </p>
+
+        <pre><code class="language-python">from functools import partial
+
+n_iter = 5  # How many iterations to run Newton-Schulz to approximate inverse sqrt
+eps=1e-6  # Epsilon for numerical stability in Newton-Schulz
+
+@partial(jax.pmap, axis_name="tp")
+def muon_tp_step(theta_tm1, g_t, B_tm1, gamma, lambd, mu_t):
+    # Step 1: Calculate B_t
+    B_t = mu_t * B_tm1 + g_t
+
+    # Step 2: Compute inverse sqrt via Newton–Schulz + orthogonalize B_t
+    G_local = B_t.T @ B_t
+    G_global = jax.lax.psum(G_local, axis_name="tp")
+    G_inv_sqrt = newton_schulz(G_global, n_iter, eps)
+    O_t = B_t @ G_inv_sqrt
+
+    # Step 3: Decoupled weight decay
+    theta_t = theta_tm1 - gamma * lambd * theta_tm1
+
+    # Step 4: Parameter update
+    theta_t = theta_t - gamma * O_t
+
+    return theta_t, B_t</code></pre>
+
+    <p>
+        Our first communication primitive is <code>jax.pmap</code>. This compiles the function and runs it in parallel across devices, mapping each slice of the inputs to a device.
+        By default, <code>jax.pmap</code> maps the first axis of the inputs to the devices, but the convention is to specify the axis name.
+        In other words, each device receives its own slice of parameters, gradients, and optimizer state, does its portion of the work, and returns its local result.
+    </p>
+
+    <p>
+        Another communication primitive is <code>jax.lax.psum(...)</code> to aggregate intermediate values into a global matrix when computing <code>G_t = B_t^\top B_t</code> across shards.
+        <br /><br />
+        As you can see, JAX makes tensor parallelism pretty easy!
+    </p>
+
+        <h2>Training loop</h2>
+        <p>
+            Now that we have our optimizer step parallel-ready, we can use it in a training loop!
+        <p>
+            The loop does the following: manually shard a (tiny) parameter matrix \(\theta\) across devices, initialize
+            the momentum-like optimizer state <code>B</code> and gradient <code>g</code>, then call <code>muon_tp_step</code> successively.
+        </p>
+        <pre><code class="language-python">import jax
+import jax.numpy as jnp
+
+devices = jax.local_device_count()
+print("Using {} devices".format(devices))
+
+# Assume we're using Muon for an LLM here.
+# These dimensions are a little unrealistic, but I would need an H100 for something realistic :)
+batch_size, embed_dim = 32, 512
+assert embed_dim % devices == 0
+
+key = jax.random.PRNGKey(0)
+theta_0 = jax.random.normal(key, (batch_size, embed_dim), dtype=jnp.float32)
+
+shards = list(jnp.split(theta_0, devices, axis=-1))
+theta_t = jax.device_put_sharded(shards, jax.local_devices())
+B_t = jax.device_put_sharded([jnp.zeros_like(s) for s in shards], jax.local_devices())
+g_t = jax.device_put_sharded([jnp.ones_like(s) for s in shards], jax.local_devices())
+
+gamma = jnp.array(1e-3)
+lambd = jnp.array(0.01)
+mu_t = jnp.array(0.95)
+
+num_steps = 3  # Number of Muon steps per optimizer update
+for step in range(num_steps):
+    theta_t, B_t = muon_tp_step(theta_t, g_t, B_t, gamma, lambd, mu_t)
+    print("One step closer to AGI")</code></pre>
+
+        <p>
+            When we setup the training loop, we use <code>jax.device_put_sharded</code> to split our matrices across devices.
+            We then call <code>muon_tp_step</code> for each step in the training loop.
+        </p>
+
+        We just tensor-parallelized the Muon optimizer update in JAX! Note, this is a toy implementation and unlikely to fully represent the actual training code used at frontier labs, since multiple types of parallelism will be at work together. Additionally, more performance and less busy-waiting can be achieved by writing custom kernels. But for a relatively simple implementation, this gives us a lot of performance!
+    </main>
+</body>
+</html>
+
+

@@ -133,3 +133,91 @@
   span.highlight {
     background-color: #ffffd0;
   }
+
+  /* --- Blog layout & accents --- */
+  .content.blog {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    line-height: 1.7;
+  }
+
+  .blog h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(90deg, #1772d0, #f09228);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .blog .byline {
+    text-align: center;
+    margin: -0.25rem 0 1.25rem 0;
+    color: #6b7280; /* slate-500 */
+    font-style: italic;
+  }
+  .blog .byline .by-prefix {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: #9aa3af; /* slate-400 */
+    margin-right: 0.35rem;
+  }
+
+  .blog h2 {
+    margin-top: 2rem;
+    color: #1772d0;
+  }
+
+  .blog h3 {
+    margin-top: 1.5rem;
+    color: #f09228;
+  }
+
+  .blog p {
+    color: #222;
+  }
+
+  .blog ul {
+    padding-left: 1.25rem;
+  }
+
+  /* Code block styling */
+  pre {
+    background: #0d1117;
+    color: #e6edf3;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #151b23;
+  }
+  pre code { display: block; }
+  /* Ensure highlight.js theme applies within our dark pre */
+  .hljs { background: transparent !important; color: #e6edf3; }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  /* Inline callouts */
+  .note {
+    background: #fff8e6;
+    border-left: 4px solid #f09228;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+  }
+
+  /* Top nav back link */
+  .blog .topnav {
+    margin: 0 0 0.5rem 0;
+  }
+  .blog .topnav a {
+    color: #f09228;
+    font-weight: 700;
+  }
+  .blog .topnav a:hover {
+    color: #1772d0;
+  }
