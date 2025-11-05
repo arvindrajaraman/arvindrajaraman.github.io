@@ -200,16 +200,22 @@ def muon_tp_step(theta_tm1, g_t, B_tm1, gamma, lambd, mu_t):
     # Step 1: Calculate B_t
     B_t = mu_t * B_tm1 + g_t
 
-    # Step 2: Compute inverse sqrt via Newton–Schulz + orthogonalize B_t
+    # Step 2: Compute inverse sqrt via Newton–Schulz
     G_local = B_t.T @ B_t
     G_global = jax.lax.psum(G_local, axis_name="tp")
     G_inv_sqrt = newton_schulz(G_global, n_iter, eps)
-    O_t = B_t @ G_inv_sqrt
 
-    # Step 3: Decoupled weight decay
+    # Step 3: Slice G_inv_sqrt to get this device's columns and orthogonalize/whiten B_t
+    idx = jax.lax.axis_index("tp")
+    D_shard = B_t.shape[-1]
+    start = idx * D_shard
+    end = start + D_shard
+    O_t = B_t @ G_inv_sqrt[:, start:end]
+
+    # Step 4: Decoupled weight decay
     theta_t = theta_tm1 - gamma * lambd * theta_tm1
 
-    # Step 4: Parameter update
+    # Step 5: Parameter update
     theta_t = theta_t - gamma * O_t
 
     return theta_t, B_t</code></pre>
@@ -221,7 +227,13 @@ def muon_tp_step(theta_tm1, g_t, B_tm1, gamma, lambd, mu_t):
     </p>
 
     <p>
-        Another communication primitive is <code>jax.lax.psum(...)</code> to aggregate intermediate values into a global matrix when computing <code>G_t = B_t^\top B_t</code> across shards.
+        After computing <code>G_inv_sqrt</code>, we need to slice it to extract only the columns corresponding to this device's shard before multiplying with <code>B_t</code>.
+        This is why we use <code>jax.lax.axis_index("tp")</code> to get the device index and compute the column range <code>[start:end]</code>
+        for this shard. The result <code>O_t = B_t @ G_inv_sqrt[:, start:end]</code> then has the correct shape.
+    </p>
+
+    <p>
+        Another communication primitive is <code>jax.lax.psum(...)</code> to aggregate intermediate values into a global matrix when computing <code>G_t = B_t.T @ B_t</code> across shards.
         <br /><br />
         As you can see, JAX makes tensor parallelism pretty easy!
     </p>
@@ -270,5 +282,3 @@ for step in range(num_steps):
     </main>
 </body>
 </html>
-
-
