@@ -25,7 +25,8 @@ const Projects = () => {
         { text: 'Best Use of Together.ai', event: 'TreeHacks 2024' }
       ],
       links: [
-        { label: 'Devpost', url: 'https://devpost.com/software/invisible-me' }
+        { label: 'Devpost', url: 'https://devpost.com/software/invisible-me' },
+        { label: 'Code', url: 'https://github.com/JasonDing9/ephemeral' }
       ],
       description: 'An autonomous AI agent that interacts through voice, can sit in on meetings, draft emails, schedule calendar events, search for answers, and more. Won Best Use of Together.ai at TreeHacks 2024.'
     },
