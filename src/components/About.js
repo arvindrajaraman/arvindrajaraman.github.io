@@ -11,7 +11,7 @@ const About = () => {
           </p>
           
           <p>
-            Before this, I was a Research Assistant at{' '}
+            Before this, I worked on unsupervised reinforcement learning and LLMs at{' '}
             <a href="https://bair.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               Berkeley Artificial Intelligence Research
             </a>{' '}
@@ -19,7 +19,7 @@ const About = () => {
             <a href="http://people.eecs.berkeley.edu/~anca/" target="_blank" rel="noopener noreferrer">
               Anca Dragan
             </a>
-            . I was a Machine Learning Scientist Intern at Atlassian, where I worked on large language model (LLM) infrastructure. In 2022, I interned at Nuro, where I worked on low-latency video streaming and model uncertainty estimation. In 2021, I was at NVIDIA working on vision models for autonomous driving.
+            . I worked at Atlassian, Nuro, and NVIDIA on ML engineering problems across LLM systems and autonomous vehicles.
           </p>
           
           <p>
@@ -31,11 +31,7 @@ const About = () => {
             <a href="https://eecs.berkeley.edu/resources/undergrads/accel" target="_blank" rel="noopener noreferrer">
               Accel Scholar
             </a>
-            ,{' '}
-            <a href="https://www.conviction.com/" target="_blank" rel="noopener noreferrer">
-              Conviction
-            </a>{' '}
-            Fellow, and part of Berkeley's{' '}
+            {' '}and part of Berkeley's{' '}
             <a href="https://met.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               Management, Entrepreneurship, and Technology (M.E.T.) Program.
             </a>
