@@ -19,6 +19,17 @@ const Projects = () => {
       description: 'Built an LLM-based browser extension that cleans up your tabs and builds context-aware workspaces. Won Best Frontier Tech Hack from Pear VC and received an investment offer at a $2.5 million valuation. Also received interest from Sequoia and shout-out from Harrison Chase (creator of LangChain). 70+ stars on GitHub.'
     },
     {
+      name: 'Ephemeral',
+      image: '/images/origin.png',
+      awards: [
+        { text: 'Best Use of Together.ai', event: 'TreeHacks 2024' }
+      ],
+      links: [
+        { label: 'Devpost', url: 'https://devpost.com/software/invisible-me' }
+      ],
+      description: 'An autonomous AI agent that interacts through voice, can sit in on meetings, draft emails, schedule calendar events, search for answers, and more. Won Best Use of Together.ai at TreeHacks 2024.'
+    },
+    {
       name: 'Verbal Coding',
       image: '/images/verbal_coding.png',
       awards: [
@@ -36,12 +47,6 @@ const Projects = () => {
   ];
 
   const otherProjects = [
-    {
-      name: 'Ephemeral',
-      link: 'https://devpost.com/software/invisible-me',
-      award: 'Best Use of Together.ai, TreeHacks 2024',
-      description: 'agentic meeting assistant that contributes to meeting conversation and automates mundane tasks.'
-    },
     {
       name: 'BiteBuddy',
       link: 'https://devpost.com/software/bonapp',
