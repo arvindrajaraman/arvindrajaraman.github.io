@@ -10,6 +10,10 @@
 
 # production
 /build
+# But allow built files at root for GitHub Pages
+!/index.html
+!/static/
+!/asset-manifest.json
 
 # misc
 .DS_Store
