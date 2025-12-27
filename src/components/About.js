@@ -11,7 +11,7 @@ const About = () => {
           </p>
           
           <p>
-            Before this, I worked on unsupervised reinforcement learning and LLMs at{' '}
+            Before this, I worked on unsupervised RL and LLMs at{' '}
             <a href="https://bair.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               Berkeley Artificial Intelligence Research
             </a>{' '}
@@ -29,7 +29,11 @@ const About = () => {
           </p>
           
           <p>
-            I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), led Machine Learning at Berkeley (ML@B). I am an{' '}
+            I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), and led{' '}
+            <a href="https://ml.studentorg.berkeley.edu/" target="_blank" rel="noopener noreferrer">
+              Machine Learning at Berkeley (ML@B)
+            </a>
+            . I am an{' '}
             <a href="https://eecs.berkeley.edu/resources/undergrads/accel" target="_blank" rel="noopener noreferrer">
               Accel Scholar
             </a>
