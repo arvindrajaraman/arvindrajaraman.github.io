@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       name: 'Ephemeral',
-      image: '/images/ephemeral.svg',
+      image: '/images/ephemeral.png',
       awards: [
         { text: 'Best Use of Together.ai', event: 'TreeHacks 2024' }
       ],
