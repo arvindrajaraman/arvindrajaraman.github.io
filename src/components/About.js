@@ -19,21 +19,23 @@ const About = () => {
             <a href="http://people.eecs.berkeley.edu/~anca/" target="_blank" rel="noopener noreferrer">
               Anca Dragan
             </a>
-            . I worked at Atlassian, Nuro, and NVIDIA on ML engineering problems across LLM systems and autonomous vehicles.
+            . I worked at{' '}
+            <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer">Atlassian</a>
+            ,{' '}
+            <a href="https://www.nuro.ai/" target="_blank" rel="noopener noreferrer">Nuro</a>
+            , and{' '}
+            <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer">NVIDIA</a>
+            {' '}on ML engineering problems across LLM systems and autonomous vehicles.
           </p>
           
           <p>
-            I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), and on the executive board of{' '}
-            <a href="https://ml.berkeley.edu/" target="_blank" rel="noopener noreferrer">
-              Machine Learning at Berkeley (ML@B)
-            </a>
-            . I am an{' '}
+            I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), led Machine Learning at Berkeley (ML@B). I am an{' '}
             <a href="https://eecs.berkeley.edu/resources/undergrads/accel" target="_blank" rel="noopener noreferrer">
               Accel Scholar
             </a>
-            {' '}and part of Berkeley's{' '}
+            {' '}and was part of Berkeley's{' '}
             <a href="https://met.berkeley.edu/" target="_blank" rel="noopener noreferrer">
-              Management, Entrepreneurship, and Technology (M.E.T.) Program.
+              M.E.T. Program.
             </a>
           </p>
         </div>
