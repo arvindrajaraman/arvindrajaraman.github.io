@@ -1,0 +1,46 @@
+.header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.name {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+  font-family: 'Crimson Text', serif;
+}
+
+.nav {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+.separator {
+  margin: 0 8px;
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 36px;
+  }
+  
+  .nav {
+    font-size: 12px;
+  }
+}
+

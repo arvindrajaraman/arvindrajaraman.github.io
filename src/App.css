@@ -1,0 +1,16 @@
+.App {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+}
+

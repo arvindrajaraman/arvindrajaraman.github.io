@@ -1,0 +1,58 @@
+.teaching-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+}
+
+.teaching-image {
+  flex-shrink: 0;
+  width: 140px;
+  height: auto;
+}
+
+.teaching-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.teaching-details {
+  flex: 1;
+}
+
+.course-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: 'Crimson Text', serif;
+}
+
+.teaching-position {
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.position-header {
+  display: inline;
+}
+
+.position-role {
+  font-weight: 500;
+}
+
+.position-term {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .teaching-item {
+    gap: 16px;
+  }
+  
+  .teaching-image {
+    width: 100px;
+  }
+}
+

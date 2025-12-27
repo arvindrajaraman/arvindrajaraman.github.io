@@ -1,0 +1,66 @@
+.research-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.research-image {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.research-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.research-details {
+  flex: 1;
+}
+
+.research-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: 'Crimson Text', serif;
+}
+
+.research-authors {
+  font-size: 15px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.research-links {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.research-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.research-note {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .research-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .research-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+

@@ -1,0 +1,21 @@
+.experience {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  font-family: 'Crimson Text', serif;
+}
+
+.section-intro {
+  margin-bottom: 32px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.experience-list {
+  margin-top: 24px;
+}
+

@@ -1,0 +1,42 @@
+.projects {
+  margin-bottom: 80px;
+}
+
+.featured-projects {
+  margin-top: 24px;
+}
+
+.other-projects {
+  margin-top: 48px;
+}
+
+.other-projects-intro {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.projects-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list-item {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.project-list-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #1a1a1a;
+  opacity: 0.5;
+}
+
+.project-award {
+  font-size: inherit;
+}
+

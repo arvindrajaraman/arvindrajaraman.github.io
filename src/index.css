@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Text', 'Georgia', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 26, 26, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  text-decoration-color: #1a1a1a;
+}
+
