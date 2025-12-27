@@ -7,11 +7,11 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="intro">
-            I am an engineer on Databricks' Applied AI team, working on LLM infrastructure.
+            I'm an engineer on Databricks' Applied AI team, working on LLM infrastructure.
           </p>
           
           <p>
-            <strong>Industry Experience</strong>. I was a Research Assistant at{' '}
+            Before this, I was a Research Assistant at{' '}
             <a href="https://bair.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               Berkeley Artificial Intelligence Research
             </a>{' '}
@@ -23,7 +23,7 @@ const About = () => {
           </p>
           
           <p>
-            <strong>Other Experience</strong>. I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), and on the executive board of{' '}
+            I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), and on the executive board of{' '}
             <a href="https://ml.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               Machine Learning at Berkeley (ML@B)
             </a>
