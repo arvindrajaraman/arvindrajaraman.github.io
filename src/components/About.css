@@ -1,12 +1,13 @@
 .about {
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
 .about-content {
-  display: flex;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  gap: 18px;
   align-items: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 18px;
 }
 
 .about-text {
@@ -14,13 +15,13 @@
 }
 
 .intro {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 14px;
   font-style: italic;
 }
 
 .about-text p {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .about-text strong {
@@ -28,27 +29,31 @@
 }
 
 .about-image {
-  flex-shrink: 0;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
 }
 
 .profile-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
   object-fit: cover;
 }
 
 .links {
   text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .links a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text);
   transition: opacity 0.2s ease;
 }
 
@@ -57,14 +62,14 @@
 }
 
 .links .separator {
-  margin: 0 8px;
-  opacity: 0.4;
+  margin: 0 6px;
+  opacity: 0.35;
 }
 
 @media (max-width: 768px) {
   .about-content {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
   
   .about-text {
@@ -73,12 +78,13 @@
   
   .about-image {
     order: 1;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    padding-left: 0;
+    border-left: none;
   }
   
   .profile-photo {
-    width: 160px;
-    height: 160px;
+    width: 130px;
+    height: 130px;
   }
 }
-

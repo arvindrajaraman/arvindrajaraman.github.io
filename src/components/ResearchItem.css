@@ -1,14 +1,14 @@
 .research-item {
   display: flex;
-  gap: 24px;
-  margin-bottom: 40px;
+  gap: 16px;
+  margin-bottom: 26px;
   align-items: flex-start;
 }
 
 .research-image {
   flex-shrink: 0;
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   position: relative;
 }
 
@@ -23,44 +23,43 @@
 }
 
 .research-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 8px;
-  font-family: 'Crimson Text', serif;
+  margin-bottom: 6px;
+  font-family: 'Newsreader', serif;
 }
 
 .research-authors {
-  font-size: 15px;
-  margin-bottom: 6px;
-  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 4px;
+  line-height: 1.5;
 }
 
 .research-links {
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.research-description {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 13px;
   margin-bottom: 8px;
 }
 
-.research-note {
+.research-description {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.research-note {
+  font-size: 14px;
+  line-height: 1.55;
   opacity: 0.8;
 }
 
 @media (max-width: 768px) {
   .research-item {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
   
   .research-image {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 }
-

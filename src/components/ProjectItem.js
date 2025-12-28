@@ -56,4 +56,3 @@ const ProjectItem = ({ name, image, awards, links, description, descriptionLinks
 };
 
 export default ProjectItem;
-

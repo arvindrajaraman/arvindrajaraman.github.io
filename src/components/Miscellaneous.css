@@ -1,18 +1,18 @@
 .miscellaneous {
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
 .misc-list {
   list-style: none;
   padding-left: 0;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .misc-list li {
-  margin-bottom: 16px;
-  font-size: 16px;
-  line-height: 1.7;
-  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: 16px;
   position: relative;
 }
 
@@ -20,7 +20,6 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #1a1a1a;
+  color: var(--text);
   opacity: 0.5;
 }
-

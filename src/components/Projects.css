@@ -1,18 +1,28 @@
 .projects {
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
 .featured-projects {
-  margin-top: 24px;
+  margin-top: 16px;
+}
+
+.projects-kicker {
+  font-family: 'Libre Franklin', sans-serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 1.4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 
 .other-projects {
-  margin-top: 48px;
+  margin-top: 28px;
 }
 
 .other-projects-intro {
-  margin-bottom: 16px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 .projects-list {
@@ -21,10 +31,10 @@
 }
 
 .project-list-item {
-  margin-bottom: 12px;
-  font-size: 16px;
-  line-height: 1.6;
-  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  padding-left: 16px;
   position: relative;
 }
 
@@ -32,7 +42,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #1a1a1a;
+  color: var(--text);
   opacity: 0.5;
 }
 
@@ -40,3 +50,7 @@
   font-size: inherit;
 }
 
+.award-highlight {
+  color: var(--accent);
+  font-weight: 600;
+}

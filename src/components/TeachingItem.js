@@ -14,14 +14,25 @@ const TeachingItem = ({ course, image, positions }) => {
             <div className="position-header">
               <span className="position-role">{position.role}</span>
               {', '}
-              <a href={position.link} target="_blank" rel="noopener noreferrer" className="position-term">
+              <a
+                href={position.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="position-term"
+
+              >
                 {position.term}
               </a>
               {' ('}
               {position.instructors.map((instructor, idx) => (
                 <span key={idx}>
                   {instructor.link ? (
-                    <a href={instructor.link} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={instructor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+
+                    >
                       {instructor.name}
                     </a>
                   ) : (
@@ -40,4 +51,3 @@ const TeachingItem = ({ course, image, positions }) => {
 };
 
 export default TeachingItem;
-

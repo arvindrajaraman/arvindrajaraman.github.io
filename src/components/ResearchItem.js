@@ -45,4 +45,3 @@ const ResearchItem = ({ title, authors, links, description, note, image }) => {
 };
 
 export default ResearchItem;
-

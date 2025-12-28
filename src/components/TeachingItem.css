@@ -1,13 +1,13 @@
 .teaching-item {
   display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: 16px;
+  margin-bottom: 24px;
   align-items: flex-start;
 }
 
 .teaching-image {
   flex-shrink: 0;
-  width: 140px;
+  width: 110px;
   height: auto;
 }
 
@@ -22,16 +22,16 @@
 }
 
 .course-name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 8px;
-  font-family: 'Crimson Text', serif;
+  margin-bottom: 6px;
+  font-family: 'Newsreader', serif;
 }
 
 .teaching-position {
-  margin-bottom: 8px;
-  font-size: 15px;
-  line-height: 1.6;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .position-header {
@@ -48,11 +48,10 @@
 
 @media (max-width: 768px) {
   .teaching-item {
-    gap: 16px;
+    gap: 12px;
   }
   
   .teaching-image {
-    width: 100px;
+    width: 90px;
   }
 }
-

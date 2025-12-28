@@ -100,23 +100,22 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section projects">
-      <h2 className="section-title">Selected Side Projects and Open-Source Contributions</h2>
+      <h2 className="section-title">Selected Projects</h2>
       <p className="section-intro">
         Below are a set of selected side projects. To see more, visit my{' '}
         <a href="https://github.com/arvindrajaraman" target="_blank" rel="noopener noreferrer">Github</a>{' '}
         and <a href="https://devpost.com/ArvindRajaraman" target="_blank" rel="noopener noreferrer">Devpost</a>.
       </p>
-      <p className="section-intro">
-        * Indicates equal contribution and co-authorship.
-      </p>
       
       <div className="featured-projects">
+        <p className="projects-kicker">Notable Projects</p>
         {featuredProjects.map((project, index) => (
           <ProjectItem key={index} {...project} />
         ))}
       </div>
       
       <div className="other-projects">
+        <p className="projects-kicker">Other Projects</p>
         <p className="other-projects-intro">Some other projects I pursued are below. Any awards won are noted in parentheses.</p>
         <ul className="projects-list">
           {otherProjects.map((project, index) => (
@@ -129,7 +128,7 @@ const Projects = () => {
                 <strong>{project.name}</strong>
               )}
               {project.award && (
-                <span className="project-award"> (<span style={{ color: '#b8860b' }}>{project.award}</span>)</span>
+                <span className="project-award"> (<span className="award-highlight">{project.award}</span>)</span>
               )}
               {' — '}
               {project.description}
@@ -142,4 +141,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
