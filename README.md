@@ -75,7 +75,6 @@ The website is configured to deploy to GitHub Pages. After building:
 
 The website features:
 - Clean, newspaper-style typography using Crimson Text serif font
-- Minimal, modern design inspired by ekzhang.com and elarabawy.com
 - Responsive layout that works on all devices
 - React components for maintainability and reusability
 
