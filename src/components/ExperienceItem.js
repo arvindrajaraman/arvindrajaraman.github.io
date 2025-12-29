@@ -14,7 +14,6 @@ const ExperienceItem = ({ company, role, team, period, description, logo, isCurr
           {isCurrent && <span className="current-badge">(Current)</span>}
         </div>
         <div className="role">{role}</div>
-        {team && <div className="team">{team}</div>}
         <div className="description">{description}</div>
       </div>
     </div>
@@ -22,4 +21,3 @@ const ExperienceItem = ({ company, role, team, period, description, logo, isCurr
 };
 
 export default ExperienceItem;
-
