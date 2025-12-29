@@ -52,8 +52,7 @@ const About = () => {
           </p>
 
           <p>
-            My other interests include economics, languages, tea, and music (specificially Indian
-            classical)!
+            My other interests include economics, languages, tea, and music!
           </p>
         </div>
         
