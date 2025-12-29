@@ -65,6 +65,29 @@
   opacity: 0.35;
 }
 
+.email-row {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.email-reveal {
+  border: none;
+  padding: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.email-reveal:hover {
+  opacity: 0.6;
+}
+
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;

@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import './About.css';
 
+const EMAIL_CODEPOINTS = [
+  97, 114, 118, 105, 110, 100, 54, 57, 48, 50, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109,
+];
+
+const shuffle = (values) => {
+  const copy = values.slice();
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+};
+
 const About = () => {
+  const email = useMemo(() => EMAIL_CODEPOINTS.map((code) => String.fromCharCode(code)).join(''), []);
+  const [scrambledEmail] = useState(() =>
+    shuffle(EMAIL_CODEPOINTS).map((code) => String.fromCharCode(code)).join('')
+  );
+  const [showEmail, setShowEmail] = useState(false);
+
   return (
     <section id="about" className="section about">
       <div className="about-content">
@@ -52,6 +71,22 @@ const About = () => {
           <p>
             My other interests include economics, languages, tea, and music!
           </p>
+          <p className="email-row">
+            Email: {showEmail ? email : scrambledEmail}
+            {!showEmail && (
+              <>
+                {' '}
+                <button
+                  type="button"
+                  className="email-reveal"
+                  onClick={() => setShowEmail(true)}
+                  aria-label="Unscramble email address"
+                >
+                  [UNSCRAMBLE]
+                </button>
+              </>
+            )}
+          </p>
         </div>
         
         <div className="about-image">
@@ -70,8 +105,6 @@ const About = () => {
       </div>
       
       <div className="links">
-        <a href="mailto:arvind6902@gmail.com">Email</a>
-        <span className="separator">/</span>
         <a href="https://x.com/arvindr02" target="_blank" rel="noopener noreferrer">Twitter</a>
         <span className="separator">/</span>
         <a href="https://github.com/arvindrajaraman" target="_blank" rel="noopener noreferrer">GitHub</a>
