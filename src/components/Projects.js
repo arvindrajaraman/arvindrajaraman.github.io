@@ -58,7 +58,7 @@ const Projects = () => {
       name: 'Unscrambit',
       link: 'https://devpost.com/software/sdf-9na5ox',
       award: 'First Place, JumpStart Hackathon 2020',
-      description: 'code analysis app that uses NLP to identify common algorithms implemented in one\'s codebase.'
+      description: 'code analysis tool that uses NLP to identify common algorithms implemented in one\'s codebase.'
     },
     {
       name: 'Autodeploy',
@@ -76,7 +76,7 @@ const Projects = () => {
       name: 'Disperse',
       link: null,
       award: null,
-      description: 'grocery store search app that ranks places in order of least crowded to most crowded. Built during COVID-19 pandemic to decrease infection rates.'
+      description: 'grocery store search app that ranks places in order of least crowded to most crowded. Built during COVID-19 pandemic when social distancing was a necessity.'
     },
     {
       name: 'NextEniac',
