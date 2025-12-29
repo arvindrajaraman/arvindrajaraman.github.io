@@ -16,7 +16,6 @@ const Research = () => {
         { label: 'Code', url: 'https://github.com/arvindrajaraman/language-skills-diayn' }
       ],
       description: 'Using language to scale unsupervised reinforcement learning and learn skills more useful to humans.',
-      note: 'This is an unfinished project so the codebase is a work in a progress. For code samples, see diayn.py in the repo.',
       image: '/images/language_skills.gif'
     },
     {
@@ -28,9 +27,10 @@ const Research = () => {
         { name: 'Andrea Bajcsy', link: 'https://www.cs.cmu.edu/~abajcsy/' }
       ],
       links: [
-        { label: 'Presentation', url: '/data/explicit-vs-implicit-2023.pdf' }
+        { label: 'Presentation', url: '/data/explicit-vs-implicit-2023.pdf' },
+        { label: 'Code', url: 'https://github.com/arvindrajaraman/closed-loop-influence' }
       ],
-      description: 'A new method for robots to collaborate with humans by co-evolving a sequence model that estimates a human\'s internal state (with a model-based prior) and a robotic influence policy.',
+      description: 'Estimating a human\'s representation of the world to have embodied agents more effectively collaborate with humans.',
       image: '/images/closed_loop_influence.gif'
     }
   ];
@@ -39,12 +39,12 @@ const Research = () => {
     <section id="research" className="section research">
       <h2 className="section-title">Research Experience</h2>
       <p className="section-intro">
-        I am excited by the prospect of embodied robots that can generalize easily to unseen tasks and environments, in order to become widely useful to humans. My research interests include deep reinforcement learning, unsupervised learning, language modeling, and human-robot interaction.
+        I am interested in creating <strong>embodied agents that model human learning</strong>, effectively representing their goals, intent, and biases. Because language is inherently information-dense, abstractable, highly available, and human-usable, I am interested in building <strong>learning systems that use language</strong> to interact with humans, represent knowledge, and plan.
       </p>
       <p className="section-intro">
-        More specifically, I am interested in creating <strong>embodied agents that model human learning</strong>, effectively representing their goals, intent, and biases. Because language is inherently information-dense, abstractable, highly available from a data standpoint, and contains knowledge about usefulness to humans, I am interested in building <strong>learning systems that use language</strong> to interact with humans, represent knowledge, and plan.
+        Concretely, my research interests include deep reinforcement learning, unsupervised learning, representation learning, and language modeling. Below are projects I've worked on.
       </p>
-      
+
       <div className="research-list">
         {researchItems.map((item, index) => (
           <ResearchItem key={index} {...item} />

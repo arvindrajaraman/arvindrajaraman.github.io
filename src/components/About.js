@@ -16,10 +16,8 @@ const About = () => {
 
           <p>
             I'm particularly interested in the engineering challenges around{' '}
-            <span className="about-emphasis">scaling AI systems</span>. With these systems in place,
-            I also spend time thinking about how we can imbue planning, reasoning, and{' '}
-            <span className="about-emphasis">representation learning</span> capabilities into these
-            systems.
+            <strong>scaling AI systems</strong> from a data, compute, and user perspective. With these systems in place,
+            I also think about the <strong>co-design of research and product</strong> to maximize the economic value of such systems.{' '}
           </p>
 
           <p>
