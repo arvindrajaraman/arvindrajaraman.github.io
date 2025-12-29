@@ -76,7 +76,7 @@ const Miscellaneous = () => {
       </ul>
       <p className="misc-kicker">Other interests</p>
       <p className="section-intro">
-        Some underexplored interests of mine are innovation economics and the history of
+        Some (underexplored) interests of mine are innovation economics and the history of
         technology. A few books I've dipped into recently that reflect these themes include{' '}
         <a href="https://www.ynharari.com/book/nexus/" target="_blank" rel="noopener noreferrer">
           Nexus
@@ -93,11 +93,11 @@ const Miscellaneous = () => {
         >
           The Big Score
         </a>
-        . I'd like to write more about these in my free time.
+        {' '}(as you can tell, huge Stripe Press fan).
       </p>
       <p className="section-intro">
         I also enjoy learning about Indic languages, music, and culture. I know bits and pieces of
-        Tamil, Sanskrit, Hindi, and Kannada. I also learnt Carnatic music for ~10 years!
+        Tamil, Sanskrit, Hindi, and Urdu, and I learnt Carnatic music for 10 years!
       </p>
     </section>
   );
