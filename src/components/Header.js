@@ -1,11 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
 
 const Header = ({ theme, onToggleTheme }) => {
+  const fullName = 'Arvind Rajaraman';
+  const [typedName, setTypedName] = useState('');
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setTypedName(fullName);
+      setIsTypingComplete(true);
+      return;
+    }
+
+    let index = 0;
+    let intervalId;
+    const startTimeoutId = window.setTimeout(() => {
+      intervalId = window.setInterval(() => {
+        index += 1;
+        setTypedName(fullName.slice(0, index));
+        if (index >= fullName.length) {
+          window.clearInterval(intervalId);
+          setIsTypingComplete(true);
+        }
+      }, 35);
+    }, 200);
+
+    return () => {
+      window.clearTimeout(startTimeoutId);
+      if (intervalId) {
+        window.clearInterval(intervalId);
+      }
+    };
+  }, []);
+
   return (
     <header className="header">
       <div className="header-top">
-        <h1 className="name">Arvind Rajaraman</h1>
+        <h1
+          className="name name-typing"
+          style={{ minWidth: `${fullName.length}ch` }}
+          aria-label={fullName}
+        >
+          <span className="name-text">{typedName}</span>
+          {typedName.length > 0 && !isTypingComplete && (
+            <span className="name-cursor" aria-hidden="true" />
+          )}
+        </h1>
         <button
           type="button"
           className="theme-toggle"

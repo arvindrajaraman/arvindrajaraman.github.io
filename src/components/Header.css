@@ -21,6 +21,35 @@
   font-family: 'Newsreader', serif;
 }
 
+.name-typing {
+  display: inline-flex;
+  align-items: baseline;
+  min-height: 1em;
+}
+
+.name-text {
+  white-space: pre;
+}
+
+.name-cursor {
+  display: inline-block;
+  width: 0.35ch;
+  height: 0.9em;
+  margin-left: 0.1ch;
+  background-color: currentColor;
+  animation: name-cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes name-cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .nav {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 12px;
