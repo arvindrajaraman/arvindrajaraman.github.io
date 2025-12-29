@@ -81,7 +81,7 @@ const Teaching = () => {
     <section id="teaching" className="section teaching">
       <h2 className="section-title">Teaching</h2>
       <p className="section-intro">I love teaching and was involved in running large undergraduate classes at Berkeley (max of 900 students and 30 course staff in one semester!).</p>
-      <p className="section-intro">I was involved in high-level decisions around curriculum/policies, content development, grading, office hours, and occassionally a lecture or two!</p>
+      <p className="section-intro">I was involved in high-level decisions around curriculum/policies, content development, grading, office hours, and occasionally a lecture or two!</p>
       
       <div className="teaching-list">
         {teachingItems.map((item, index) => (
