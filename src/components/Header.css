@@ -7,16 +7,17 @@
 
 .header-top {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 16px;
+  margin-bottom: 12px;
 }
 
 .name {
   font-size: 40px;
   font-weight: 600;
   letter-spacing: -0.3px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   font-family: 'Newsreader', serif;
 }
 

@@ -74,6 +74,31 @@ const Miscellaneous = () => {
           talk I presented to Berkeley students
         </li>
       </ul>
+      <p className="misc-kicker">Other interests</p>
+      <p className="section-intro">
+        Some underexplored interests of mine are innovation economics and the history of
+        technology. A few books I've dipped into recently that reflect these themes include{' '}
+        <a href="https://www.ynharari.com/book/nexus/" target="_blank" rel="noopener noreferrer">
+          Nexus
+        </a>
+        ,{' '}
+        <a href="https://press.stripe.com/boom" target="_blank" rel="noopener noreferrer">
+          Boom
+        </a>
+        , and{' '}
+        <a
+          href="https://press.stripe.com/the-big-score"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The Big Score
+        </a>
+        . I'd like to write more about these in my free time.
+      </p>
+      <p className="section-intro">
+        I also enjoy learning about Indic languages, music, and culture. I know bits and pieces of
+        Tamil, Sanskrit, Hindi, and Kannada. I also learnt Carnatic music for ~10 years!
+      </p>
     </section>
   );
 };

@@ -7,40 +7,53 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="intro">
-            I'm an engineer on Databricks' Applied AI team, working on LLM infrastructure.
-          </p>
-          
-          <p>
-            Before this, I worked on unsupervised RL and LLMs at{' '}
-            <a href="https://bair.berkeley.edu/" target="_blank" rel="noopener noreferrer">
-              Berkeley Artificial Intelligence Research
-            </a>{' '}
-            with Professor{' '}
-            <a href="http://people.eecs.berkeley.edu/~anca/" target="_blank" rel="noopener noreferrer">
-              Anca Dragan
+            I work on LLM infrastructure and agent systems at 🧱{' '}
+            <a href="https://www.databricks.com/" target="_blank" rel="noopener noreferrer">
+              Databricks
             </a>
-            . I worked at{' '}
-            <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer">Atlassian</a>
-            ,{' '}
-            <a href="https://www.nuro.ai/" target="_blank" rel="noopener noreferrer">Nuro</a>
-            , and{' '}
-            <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer">NVIDIA</a>
-            {' '}on ML engineering problems across LLM systems and autonomous vehicles.
+            .
           </p>
-          
+
           <p>
-            I completed my undergrad at UC Berkeley, where I was the Head TA for Berkeley's CS 188 (Artificial Intelligence) and CS 189 (Machine Learning), and led{' '}
+            I'm particularly interested in the engineering challenges around{' '}
+            <span className="about-emphasis">scaling AI systems</span>. With these systems in place,
+            I also spend time thinking about how we can imbue planning, reasoning, and{' '}
+            <span className="about-emphasis">representation learning</span> capabilities into these
+            systems.
+          </p>
+
+          <p>
+            Previously, I worked on scalable ML systems at{' '}
+            <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer">
+              Atlassian
+            </a>
+            ,{' '}
+            <a href="https://www.nuro.ai/" target="_blank" rel="noopener noreferrer">
+              Nuro
+            </a>
+            , and{' '}
+            <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer">
+              NVIDIA
+            </a>
+            , and did research in representation learning and reinforcement learning at{' '}
+            <a href="https://bair.berkeley.edu/" target="_blank" rel="noopener noreferrer">
+              Berkeley Artificial Intelligence Research (BAIR)
+            </a>
+            .
+          </p>
+
+          <p>
+            I did my undergrad at UC Berkeley, where I was involved in running large undergrad
+            classes, leading{' '}
             <a href="https://ml.studentorg.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               Machine Learning at Berkeley (ML@B)
             </a>
-            . I am an{' '}
-            <a href="https://eecs.berkeley.edu/resources/undergrads/accel" target="_blank" rel="noopener noreferrer">
-              Accel Scholar
-            </a>
-            {' '}and was part of Berkeley's{' '}
-            <a href="https://met.berkeley.edu/" target="_blank" rel="noopener noreferrer">
-              M.E.T. Program.
-            </a>
+            , and some open-source work.
+          </p>
+
+          <p>
+            My other interests include economics, languages, tea, and music (specificially Indian
+            classical)!
           </p>
         </div>
         
@@ -56,7 +69,7 @@ const About = () => {
       <div className="links">
         <a href="mailto:arvind6902@gmail.com">Email</a>
         <span className="separator">/</span>
-        <a href="https://twitter.com/Arvind_ML" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://x.com/arvindr02" target="_blank" rel="noopener noreferrer">Twitter</a>
         <span className="separator">/</span>
         <a href="https://github.com/arvindrajaraman" target="_blank" rel="noopener noreferrer">GitHub</a>
         <span className="separator">/</span>

@@ -100,9 +100,9 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section projects">
-      <h2 className="section-title">Selected Projects</h2>
+      <h2 className="section-title">Projects</h2>
       <p className="section-intro">
-        Below are a set of selected side projects. To see more, visit my{' '}
+        Below is a curated set of some side projects and open-source work. To see more, visit my{' '}
         <a href="https://github.com/arvindrajaraman" target="_blank" rel="noopener noreferrer">Github</a>{' '}
         and <a href="https://devpost.com/ArvindRajaraman" target="_blank" rel="noopener noreferrer">Devpost</a>.
       </p>
