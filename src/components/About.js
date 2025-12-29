@@ -57,11 +57,17 @@ const About = () => {
         </div>
         
         <div className="about-image">
-          <img 
-            src="/images/ArvindRajaraman.jpeg" 
-            alt="Arvind Rajaraman" 
-            className="profile-photo"
-          />
+          <a
+            href="/images/ArvindRajaraman.jpeg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img 
+              src="/images/ArvindRajaraman.jpeg" 
+              alt="Arvind Rajaraman" 
+              className="profile-photo"
+            />
+          </a>
         </div>
       </div>
       
