@@ -9,7 +9,7 @@ const Experience = () => {
       role: 'Software Engineer',
       team: 'Applied AI Team',
       period: 'Current',
-      description: 'Sampling of things I\'ve worked on: distributed inference, traffic prediction, load balancing, reliability, cost optimization, and observability over LLMs across multiple cloud providers, datacenters, and accelerators. Most code contributions across all Databricks engineers at my level (~200).',
+      description: 'Sampling of things I\'ve worked on: distributed inference, traffic prediction, load balancing, reliability, cost optimization, and observability over LLMs across multiple cloud providers, datacenters, and accelerators. Most code contributions across all Databricks engineers at my level (~375).',
       logo: '/images/databricks.png',
       isCurrent: true
     },
