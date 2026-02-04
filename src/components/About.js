@@ -35,8 +35,7 @@ const About = () => {
 
           <p>
             I'm particularly interested in the engineering challenges around{' '}
-            <strong>scaling AI systems</strong> from a data, compute, and user perspective. With these systems in place,
-            I also think about the <strong>co-design of research and product</strong> to build economically valuable yet delightful AI systems.{' '}
+            <strong>scaling AI systems</strong> from a data, compute, and user perspective. I also think about the <strong>co-design of research and product</strong> to build economically valuable yet delightful AI systems.{' '}
           </p>
 
           <p>
