@@ -26,7 +26,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="intro">
-            I work on LLM infrastructure and agent systems at 🧱{' '}
+            I work on browser-use agents and LLM serving at 🧱{' '}
             <a href="https://www.databricks.com/" target="_blank" rel="noopener noreferrer">
               Databricks
             </a>
@@ -34,8 +34,10 @@ const About = () => {
           </p>
 
           <p>
-            I'm particularly interested in the engineering challenges around{' '}
-            <strong>scaling AI systems</strong> from a data, compute, and user perspective. I also think about the <strong>co-design of research and product</strong> to build economically valuable yet delightful AI systems.{' '}
+            Broadly, I'm interested in the distributed systems challenges around scaling AI systems,
+            including background/scheduled agents, browser-use, evals, and LLM serving. I also spend
+            time thinking about how to design interfaces that make working with AI more natural and
+            useful.
           </p>
 
           <p>

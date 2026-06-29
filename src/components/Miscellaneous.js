@@ -93,10 +93,26 @@ const Miscellaneous = () => {
         >
           The Big Score
         </a>
-        {' '}(as you can tell, huge Stripe Press fan).
+        {' '}(as you can tell, huge Stripe Press fan). I also love fiction; recent books include{' '}
+        <a
+          href="https://www.penguinrandomhouse.com/books/329173/the-count-of-monte-cristo-by-alexandre-dumas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The Count of Monte Cristo
+        </a>{' '}
+        and{' '}
+        <a
+          href="https://www.harpercollins.com/products/interpreter-of-maladies-jhumpa-lahiri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Interpreter of Maladies
+        </a>
+        .
       </p>
       <p className="section-intro">
-        I also enjoy learning about Indic languages, music, and culture. I know bits and pieces of
+        I enjoy learning about Indic languages, music, and culture. I know bits and pieces of
         Tamil, Sanskrit, Hindi, and Urdu, and I learnt Carnatic music for 10 years!
       </p>
     </section>
