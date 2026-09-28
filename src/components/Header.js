@@ -74,17 +74,6 @@ const Header = ({ theme, onToggleTheme }) => {
           )}
         </button>
       </div>
-      <nav className="nav">
-        <a href="#about">About</a>
-        <span className="separator">/</span>
-        <a href="#experience">Experience</a>
-        <span className="separator">/</span>
-        <a href="#research">Research</a>
-        <span className="separator">/</span>
-        <a href="#teaching">Teaching</a>
-        <span className="separator">/</span>
-        <a href="#projects">Projects</a>
-      </nav>
     </header>
   );
 };

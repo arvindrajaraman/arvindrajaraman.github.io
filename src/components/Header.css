@@ -10,7 +10,6 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 12px;
 }
 
 .name {
@@ -48,24 +47,6 @@
   50% {
     opacity: 0;
   }
-}
-
-.nav {
-  font-family: 'Libre Franklin', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--text);
-  transition: opacity 0.2s ease;
-}
-
-.nav a:hover {
-  opacity: 0.6;
 }
 
 .separator {
@@ -110,7 +91,4 @@
     font-size: 32px;
   }
   
-  .nav {
-    font-size: 11px;
-  }
 }

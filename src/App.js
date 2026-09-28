@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
-import Experience from './components/Experience';
-import Research from './components/Research';
-import Teaching from './components/Teaching';
-import Projects from './components/Projects';
-import Miscellaneous from './components/Miscellaneous';
 
 function App() {
   const [systemTheme, setSystemTheme] = useState(() => {
@@ -50,11 +45,6 @@ function App() {
       <div className="container">
         <Header theme={theme} onToggleTheme={handleToggleTheme} />
         <About />
-        <Experience />
-        <Research />
-        <Teaching />
-        <Projects />
-        <Miscellaneous />
       </div>
     </div>
   );
