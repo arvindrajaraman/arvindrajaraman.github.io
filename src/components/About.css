@@ -17,11 +17,14 @@
 .intro {
   font-size: 23px;
   line-height: 1.4;
-  margin-bottom: 14px;
 }
 
 .about-text p {
-  margin-bottom: 12px;
+  margin-bottom: 22px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
 }
 
 .about-text strong {
