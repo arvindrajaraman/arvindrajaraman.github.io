@@ -20,7 +20,8 @@
       (function () {
         try {
           var storedTheme = window.localStorage.getItem('theme');
-          var theme = storedTheme || 'light';
+          var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          var theme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : systemTheme;
           document.documentElement.setAttribute('data-theme', theme);
         } catch (e) {
           // Intentionally empty to avoid blocking rendering.

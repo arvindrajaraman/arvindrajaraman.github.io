@@ -9,20 +9,39 @@ import Projects from './components/Projects';
 import Miscellaneous from './components/Miscellaneous';
 
 function App() {
-  const [theme, setTheme] = useState(() => {
+  const [systemTheme, setSystemTheme] = useState(() => {
     if (typeof window === 'undefined') {
       return 'light';
     }
-    return window.localStorage.getItem('theme') || 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
+
+  const [themeOverride, setThemeOverride] = useState(() => {
+    if (typeof window === 'undefined') {
+      return null;
+    }
+    const storedTheme = window.localStorage.getItem('theme');
+    return storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : null;
+  });
+
+  const theme = themeOverride || systemTheme;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (event) => {
+      setSystemTheme(event.matches ? 'dark' : 'light');
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   const handleToggleTheme = () => {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
+    setThemeOverride(nextTheme);
     window.localStorage.setItem('theme', nextTheme);
   };
 
