@@ -56,7 +56,7 @@ const Experience = () => {
       role: 'Software Engineer Intern',
       team: null,
       period: null,
-      description: 'Security, developer acceleration',
+      description: 'Data engineering',
       logo: '/images/segmed.jpeg',
       note: 'YC W20'
     }

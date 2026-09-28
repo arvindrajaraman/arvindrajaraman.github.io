@@ -1,28 +1,7 @@
 import React from 'react';
 import './ProjectItem.css';
 
-const ProjectItem = ({ name, image, awards, links, description, descriptionLinks }) => {
-  const renderDescription = () => {
-    if (!descriptionLinks || descriptionLinks.length === 0) {
-      return <p className="project-description">{description}</p>;
-    }
-    
-    // Handle links at the end of description
-    const link = descriptionLinks[0];
-    if (link.position === 'end') {
-      return (
-        <p className="project-description">
-          {description}
-          <a href={link.url} target="_blank" rel="noopener noreferrer">
-            {link.text}
-          </a>
-          .
-        </p>
-      );
-    }
-    return <p className="project-description">{description}</p>;
-  };
-
+const ProjectItem = ({ name, image, awards, links, description }) => {
   return (
     <div className="project-item">
       <div className="project-image">
@@ -34,7 +13,7 @@ const ProjectItem = ({ name, image, awards, links, description, descriptionLinks
           <div className="project-awards">
             {awards.map((award, index) => (
               <div key={index} className="project-award">
-                <span className="award-highlight">{award.text}</span>, {award.event}
+                <span className="award-highlight">{award}</span>
               </div>
             ))}
           </div>
@@ -49,7 +28,7 @@ const ProjectItem = ({ name, image, awards, links, description, descriptionLinks
             </span>
           ))}
         </div>
-        {renderDescription()}
+        <p className="project-description">{description}</p>
       </div>
     </div>
   );

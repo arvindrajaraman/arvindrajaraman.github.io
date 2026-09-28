@@ -7,57 +7,48 @@ const Projects = () => {
     {
       name: 'Origin',
       image: '/images/origin.png',
-      awards: [
-        { text: 'Best Frontier Tech Hack', event: 'Stanford TreeHacks 2023' }
-      ],
+      awards: ['Award winner at Stanford TreeHacks 2023'],
       links: [
-        { label: 'Blog Post', url: 'https://blog.langchain.dev/origin-web-browser/' },
         { label: 'Devpost', url: 'https://devpost.com/software/pathfinder-em2qjb' },
-        { label: 'Code', url: 'https://github.com/pgasawa/origin' },
-        { label: 'Tweet', url: 'https://x.com/Arvind_ML/status/1627559733262688256' }
+        { label: 'LangChain Blog Post', url: 'https://blog.langchain.dev/origin-web-browser/' }
       ],
-      description: 'Built an LLM-based browser extension that cleans up your tabs and builds context-aware workspaces. Won Best Frontier Tech Hack from Pear VC and received an investment offer at a $2.5 million valuation. Also received interest from Sequoia and shout-out from Harrison Chase (creator of LangChain). 70+ stars on GitHub.'
+      description: 'Proof of concept for an agentic browser in early 2023. Featured in the LangChain blog and won award at Stanford TreeHacks.'
     },
     {
       name: 'Ephemeral',
       image: '/images/ephemeral.png',
-      awards: [
-        { text: 'Best Use of Together.ai', event: 'TreeHacks 2024' }
-      ],
+      awards: ['Award winner at Stanford TreeHacks 2024'],
       links: [
         { label: 'Devpost', url: 'https://devpost.com/software/invisible-me' },
         { label: 'Code', url: 'https://github.com/JasonDing9/ephemeral' }
       ],
-      description: 'An autonomous AI agent that interacts through voice, can sit in on meetings, draft emails, schedule calendar events, search for answers, and more. Won Best Use of Together.ai at TreeHacks 2024.'
-    },
-    {
-      name: 'Verbal Coding',
-      image: '/images/verbal_coding.png',
-      awards: [
-        { text: 'Winner of Education Track', event: 'HackNYU 2019' },
-        { text: 'Best Use of Google Cloud', event: 'HackNYU 2019' }
-      ],
-      links: [
-        { label: 'Devpost', url: 'https://devpost.com/software/verbal-coding' }
-      ],
-      description: 'Developed a verbal code editor that uses NLP to convert spoken pseudocode into well-formed Python code. Continued work and received mentorship from MIT Professor ',
-      descriptionLinks: [
-        { text: 'Kyle Keane', url: 'http://www.kylekeane.com/', position: 'end' }
-      ]
+      description: 'AI companion that sits in on meetings and proactively contributes to the conversation. Won award at Stanford TreeHacks.'
     }
   ];
 
   const otherProjects = [
     {
+      name: 'Verbal Coding',
+      link: 'https://devpost.com/software/verbal-coding',
+      award: 'Award winner at HackNYU 2019',
+      description: <>
+        developed a verbal code editor that converts spoken pseudocode into well-formed Python
+        code. Continued work with mentorship from MIT Professor{' '}
+        <a href="http://www.kylekeane.com/" target="_blank" rel="noopener noreferrer">
+          Kyle Keane
+        </a>.
+      </>
+    },
+    {
       name: 'BiteBuddy',
       link: 'https://devpost.com/software/bonapp',
-      award: 'Best Use of Reflex, CalHacks 2023',
+      award: 'Award winner at CalHacks 2023',
       description: 'meal planner app with social networking integrations.'
     },
     {
       name: 'Unscrambit',
       link: 'https://devpost.com/software/sdf-9na5ox',
-      award: 'First Place, JumpStart Hackathon 2020',
+      award: 'Award winner at JumpStart Hackathon 2020',
       description: 'code analysis tool that uses NLP to identify common algorithms implemented in one\'s codebase.'
     },
     {
