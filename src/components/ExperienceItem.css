@@ -35,8 +35,7 @@
   font-size: 17px;
 }
 
-.company-note,
-.current-badge {
+.company-note {
   font-style: italic;
   font-weight: 400;
   margin-left: 8px;

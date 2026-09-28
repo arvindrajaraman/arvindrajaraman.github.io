@@ -8,7 +8,6 @@ const Experience = () => {
       company: 'Databricks',
       role: 'Software Engineer',
       team: 'Applied AI Team',
-      period: 'Current',
       description: (
         <>
           <p>Sampling of things I've worked on grouped into 2 workstreams:</p>
@@ -23,14 +22,10 @@ const Experience = () => {
               multiple cloud providers, datacenters, and accelerators
             </li>
           </ol>
-          <p>
-            Top 1% in code contributions among all engineers; lead for the Background Agents team;
-            mentoring and leading 3 engineers.
-          </p>
+          <p>Top 1% in code contributions among all engineers.</p>
         </>
       ),
-      logo: '/images/databricks.png',
-      isCurrent: true
+      logo: '/images/databricks.png'
     },
     {
       company: 'Atlassian',
@@ -38,8 +33,7 @@ const Experience = () => {
       team: 'Core Machine Learning Team',
       period: null,
       description: 'ML infra, search, retrieval, text-to-SQL',
-      logo: '/images/atlassian.jpeg',
-      isCurrent: false
+      logo: '/images/atlassian.jpeg'
     },
     {
       company: 'Nuro',
@@ -47,8 +41,7 @@ const Experience = () => {
       team: 'Fleet Infrastructure Team',
       period: '2022',
       description: 'Low-latency video processing, video model pre-training, inter-annotator disagreement',
-      logo: '/images/nuro.jpeg',
-      isCurrent: false
+      logo: '/images/nuro.jpeg'
     },
     {
       company: 'NVIDIA',
@@ -56,8 +49,7 @@ const Experience = () => {
       team: 'Autonomous Vehicles Division, DriveIX',
       period: '2021',
       description: 'ML infra, image processing, computer vision',
-      logo: '/images/nvidia.jpeg',
-      isCurrent: false
+      logo: '/images/nvidia.jpeg'
     },
     {
       company: 'Segmed',
@@ -66,7 +58,6 @@ const Experience = () => {
       period: null,
       description: 'Security, developer acceleration',
       logo: '/images/segmed.jpeg',
-      isCurrent: false,
       note: 'YC W20'
     }
   ];

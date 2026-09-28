@@ -26,7 +26,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="intro">
-            I work on browser-use agents and LLM serving at 🧱{' '}
+            I work on building long-horizon background agents at 🧱{' '}
             <a href="https://www.databricks.com/" target="_blank" rel="noopener noreferrer">
               Databricks
             </a>
@@ -73,7 +73,7 @@ const About = () => {
             My other interests include economics, languages, tea, and music!
           </p>
           <p className="email-row">
-            Email: {showEmail ? email : scrambledEmail}
+            <strong>Email:</strong> {showEmail ? email : scrambledEmail}
             {!showEmail && (
               <>
                 {' '}
@@ -83,7 +83,7 @@ const About = () => {
                   onClick={() => setShowEmail(true)}
                   aria-label="Unscramble email address"
                 >
-                  [UNSCRAMBLE]
+                  [unscramble]
                 </button>
               </>
             )}
@@ -92,12 +92,12 @@ const About = () => {
         
         <div className="about-image">
           <a
-            href="/images/ArvindRajaraman.jpeg"
+            href="/images/headshot.png"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img 
-              src="/images/ArvindRajaraman.jpeg" 
+              src="/images/headshot.png"
               alt="Arvind Rajaraman" 
               className="profile-photo"
             />

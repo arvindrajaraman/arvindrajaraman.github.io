@@ -1,7 +1,7 @@
 import React from 'react';
 import './ExperienceItem.css';
 
-const ExperienceItem = ({ company, role, team, period, description, logo, isCurrent, note }) => {
+const ExperienceItem = ({ company, role, team, period, description, logo, note }) => {
   return (
     <div className="experience-item">
       <div className="experience-logo">
@@ -11,7 +11,6 @@ const ExperienceItem = ({ company, role, team, period, description, logo, isCurr
         <div className="experience-header">
           <span className="company-name">{company}</span>
           {note && <span className="company-note">({note})</span>}
-          {isCurrent && <span className="current-badge">(Current)</span>}
         </div>
         <div className="role">{role}</div>
         <div className="description">{description}</div>
