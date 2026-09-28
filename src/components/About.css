@@ -80,6 +80,49 @@
   background: rgba(16, 14, 13, 0.88);
 }
 
+.photo-lightbox[open] {
+  animation: photo-fade-in 220ms ease-out both;
+}
+
+.photo-lightbox[open]::backdrop {
+  animation: photo-backdrop-in 220ms ease-out both;
+}
+
+.photo-lightbox[open].is-closing {
+  animation: photo-fade-out 220ms ease-in both;
+}
+
+.photo-lightbox[open].is-closing::backdrop {
+  animation: photo-backdrop-out 220ms ease-in both;
+}
+
+@keyframes photo-fade-in {
+  from { opacity: 0; transform: translate(-50%, -48%) scale(0.98); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes photo-fade-out {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -48%) scale(0.98); }
+}
+
+@keyframes photo-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes photo-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-lightbox[open],
+  .photo-lightbox[open]::backdrop {
+    animation: none;
+  }
+}
+
 .photo-lightbox-image {
   display: block;
   max-width: 100%;

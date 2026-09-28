@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './About.css';
 
 const EMAIL_CODEPOINTS = [
@@ -16,11 +16,32 @@ const shuffle = (values) => {
 
 const About = () => {
   const photoDialogRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
+  const [photoClosing, setPhotoClosing] = useState(false);
   const email = useMemo(() => EMAIL_CODEPOINTS.map((code) => String.fromCharCode(code)).join(''), []);
   const [scrambledEmail] = useState(() =>
     shuffle(EMAIL_CODEPOINTS).map((code) => String.fromCharCode(code)).join('')
   );
   const [showEmail, setShowEmail] = useState(false);
+
+  useEffect(() => () => window.clearTimeout(closeTimeoutRef.current), []);
+
+  const closePhoto = () => {
+    const dialog = photoDialogRef.current;
+    if (!dialog?.open || closeTimeoutRef.current !== null) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      dialog.close();
+      return;
+    }
+
+    setPhotoClosing(true);
+    closeTimeoutRef.current = window.setTimeout(() => {
+      dialog.close();
+      closeTimeoutRef.current = null;
+      setPhotoClosing(false);
+    }, 220);
+  };
 
   return (
     <section id="about" className="section about">
@@ -109,17 +130,21 @@ const About = () => {
 
       <dialog
         ref={photoDialogRef}
-        className="photo-lightbox"
+        className={`photo-lightbox${photoClosing ? ' is-closing' : ''}`}
         aria-label="Headshot"
+        onCancel={(event) => {
+          event.preventDefault();
+          closePhoto();
+        }}
         onClick={(event) => {
-          if (event.target === event.currentTarget) event.currentTarget.close();
+          if (event.target === event.currentTarget) closePhoto();
         }}
       >
         <button
           type="button"
           className="photo-lightbox-close"
           aria-label="Close headshot"
-          onClick={() => photoDialogRef.current?.close()}
+          onClick={closePhoto}
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 5l14 14M19 5L5 19" />
