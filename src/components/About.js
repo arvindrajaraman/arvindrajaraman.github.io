@@ -92,12 +92,12 @@ const About = () => {
         
         <div className="about-image">
           <a
-            href="/images/headshot.png"
+            href="/images/headshot.jpg"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img 
-              src="/images/headshot.png"
+              src="/images/headshot.jpg"
               alt="Arvind Rajaraman" 
               className="profile-photo"
             />
