@@ -26,7 +26,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="intro">
-            I work on building long-horizon background agents at 🧱{' '}
+            I work on building long-horizon, self-improving agents at 🧱{' '}
             <a href="https://www.databricks.com/" target="_blank" rel="noopener noreferrer">
               Databricks
             </a>
