@@ -34,10 +34,11 @@ const About = () => {
           </p>
 
           <p>
-            Broadly, I'm interested in the distributed systems challenges around scaling AI systems,
-            including background/scheduled agents, browser-use, evals, and LLM serving. I also spend
-            time thinking about how to design interfaces that make working with AI more natural and
-            useful.
+            Broadly, I'm interested in improving capabilities for agents on long-horizon tasks. At
+            Databricks, I'm working on a declarative agent harness to enable recursive self-improvement
+            and scaling/infra problems around fleets of long-running agents. Lastly, I work on designing
+            interfaces that make working with AI more natural and useful, particularly for data science
+            and engineering.
           </p>
 
           <p>
