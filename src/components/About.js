@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import './About.css';
 
 const EMAIL_CODEPOINTS = [
@@ -15,6 +15,7 @@ const shuffle = (values) => {
 };
 
 const About = () => {
+  const photoDialogRef = useRef(null);
   const email = useMemo(() => EMAIL_CODEPOINTS.map((code) => String.fromCharCode(code)).join(''), []);
   const [scrambledEmail] = useState(() =>
     shuffle(EMAIL_CODEPOINTS).map((code) => String.fromCharCode(code)).join('')
@@ -91,19 +92,41 @@ const About = () => {
         </div>
         
         <div className="about-image">
-          <a
-            href="/images/headshot.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            className="profile-photo-button"
+            aria-label="View headshot full screen"
+            onClick={() => photoDialogRef.current?.showModal()}
           >
-            <img 
+            <img
               src="/images/headshot.jpg"
-              alt="Arvind Rajaraman" 
+              alt="Arvind Rajaraman"
               className="profile-photo"
             />
-          </a>
+          </button>
         </div>
       </div>
+
+      <dialog
+        ref={photoDialogRef}
+        className="photo-lightbox"
+        aria-label="Headshot"
+        onClick={(event) => {
+          if (event.target === event.currentTarget) event.currentTarget.close();
+        }}
+      >
+        <button
+          type="button"
+          className="photo-lightbox-close"
+          aria-label="Close headshot"
+          onClick={() => photoDialogRef.current?.close()}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 5l14 14M19 5L5 19" />
+          </svg>
+        </button>
+        <img src="/images/headshot.jpg" alt="Arvind Rajaraman" className="photo-lightbox-image" />
+      </dialog>
       
       <div className="links">
         <a href="https://x.com/arvindr02" target="_blank" rel="noopener noreferrer">Twitter</a>

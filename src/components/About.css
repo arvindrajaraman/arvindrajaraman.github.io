@@ -39,10 +39,79 @@
 }
 
 .profile-photo {
+  display: block;
   width: 150px;
   height: 150px;
   border-radius: 6px;
   object-fit: cover;
+}
+
+.profile-photo-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  cursor: zoom-in;
+}
+
+.profile-photo-button:focus-visible,
+.photo-lightbox-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.photo-lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+
+.photo-lightbox::backdrop {
+  background: rgba(16, 14, 13, 0.88);
+}
+
+.photo-lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 64px);
+  margin: auto;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.photo-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  cursor: pointer;
+}
+
+.photo-lightbox-close svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
 .links {
