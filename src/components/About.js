@@ -36,9 +36,8 @@ const About = () => {
           <p>
             Broadly, I'm interested in improving capabilities for agents on long-horizon tasks. At
             Databricks, I'm working on a declarative agent harness to enable recursive self-improvement
-            and scaling/infra problems around fleets of long-running agents. Lastly, I work on designing
-            interfaces that make working with AI more natural and useful, particularly for data science
-            and engineering.
+            and scaling/infra problems around fleets of long-running agents. Lastly, I work on data
+            interfaces that make working with AI more natural and intuitive.
           </p>
 
           <p>
